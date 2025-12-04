@@ -1,0 +1,140 @@
+.list {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.listItem {
+  width: 888px;
+  padding: 24px;
+  border: 1px solid #dadde1;
+  border-radius: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  height: 100%;
+}
+
+.image {
+  border-radius: 10px;
+  width: 292px;
+  height: 320px;
+}
+
+.cardData {
+  width: 524px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 8px;
+}
+
+.name,
+.price {
+  font-weight: 600;
+  font-size: 24px;
+
+  line-height: 1.33;
+  color: var(--main);
+}
+
+.priceFavourite {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.star,
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  font-weight: 400;
+  font-size: 16px;
+
+  line-height: 1.5;
+  color: var(--main);
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+
+  line-height: 1.5;
+  color: var(--text);
+
+  display: inline-block;
+  width: 525px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 24px;
+}
+
+.detail {
+  display: inline-block;
+
+  border: none;
+  border-radius: 200px;
+  padding-block: 16px;
+  padding-inline: 48px;
+  background-color: var(--button);
+
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  outline: none;
+
+  transition: background-color 0.3s ease-in-out;
+}
+
+.detail:hover {
+  background-color: var(--button-hover);
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  max-height: 104px;
+  overflow: hidden;
+}
+
+.feature {
+  border-radius: 100px;
+  padding: 12px 18px;
+  max-width: 143px;
+  height: 48px;
+  background-color: var(--badges);
+  mix-blend-mode: multiply;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.featureIcon {
+  width: 20px;
+  height: 20px;
+}
