@@ -4,13 +4,12 @@ import CampersList from '@/components/CampersList/CampersList';
 import { fetchCampers, FetchCampersResponse } from '@/lib/api/clientApi';
 import { useInfiniteQuery, type InfiniteData } from '@tanstack/react-query';
 import css from './catalog.module.css';
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import SidebarFilters from '@/components/SidebarFilter/SidebarFilter';
 import { AllFiltersState, EquipmentOption } from '@/types/filters';
-// import { useDebounce } from 'use-debounce';
-import { EngineType, TransmissionType, FormType, Camper } from '@/types/camper';
+import { EngineType, TransmissionType, FormType } from '@/types/camper';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
-// import Loading from '@/app/loading';
+import Loading from '../loading';
 
 const getFiltersFromParams = (
   searchParams: URLSearchParams
@@ -36,16 +35,13 @@ export default function CampersClient() {
   const [filters, setFilters] = useState<AllFiltersState>(() =>
     getFiltersFromParams(searchParams)
   );
-  // const [debouncedPriceRange] = useDebounce(filters.priceRange, 3000);
   const apiFilters = useMemo(
     () => ({
       ...filters,
     }),
-    // [filters, debouncedPriceRange]
     [filters]
   );
 
-  const isInitialRender = useRef(true);
   const {
     data,
     isLoading,
@@ -102,21 +98,6 @@ export default function CampersClient() {
   });
 
   useEffect(() => {
-    if (isInitialRender.current) {
-      isInitialRender.current = false;
-      return;
-    }
-    if (window.scrollY <= 0) {
-      return;
-    }
-    {
-      setTimeout(() => {
-        window.scrollTo({ top: 60, behavior: 'smooth' });
-      }, 1300);
-    }
-  }, [apiFilters]);
-
-  useEffect(() => {
     const params = new URLSearchParams();
     if (apiFilters.location !== '') {
       params.set('location', apiFilters.location);
@@ -149,7 +130,7 @@ export default function CampersClient() {
     fetchNextPage().then(() => {
       requestAnimationFrame(() => {
         window.scrollBy({
-          top: 879,
+          top: 650,
           behavior: 'smooth',
         });
       });
@@ -164,12 +145,10 @@ export default function CampersClient() {
             currentFilters={filters}
             onFilterChange={setFilters}
             onClearAll={handleClearAll}
-            shown={shown}
-            total={total}
           />
         </aside>
         <div className={css.contentArea}>
-          {/* {isLoading && <Loading></Loading>} */}
+          {isLoading && <Loading></Loading>}
           <CampersList campers={campers}></CampersList>{' '}
           <div className={css.buttonContainer}>
             {hasNextPage && (
@@ -183,20 +162,6 @@ export default function CampersClient() {
             )}
           </div>
         </div>{' '}
-        {/* {!isLoading && total < 1 && (
-          <div className={css.test}>
-            <div className={css.messageContainer}>
-              <p className={css.message}>{'loading error'}</p>
-              <button
-                type="button"
-                onClick={handleClearAll}
-                className={css.reset}
-              >
-                {'resetFilters'}
-              </button>
-            </div>
-          </div>
-        )} */}
       </main>{' '}
     </div>
   );

@@ -1,11 +1,10 @@
 .hero {
-  width: 100%;
   background-image: url('/img/hero/hero-image-desktop.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  align-items: center;
+  min-height: 100vh;
+  position: relative;
 }
 
 .content {

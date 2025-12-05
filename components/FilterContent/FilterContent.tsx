@@ -1,6 +1,6 @@
 'use client';
 
-import { useDebouncedCallback } from 'use-debounce';
+import { useState, useEffect, useCallback } from 'react';
 
 import css from './FilterContent.module.css';
 import {
@@ -15,7 +15,23 @@ import { EngineType, FormType } from '@/types/camper';
 export default function FilterContent({
   currentFilters,
   onFilterChange,
+  onClearAll,
 }: FilterContentProps) {
+  const [localFilters, setLocalFilters] = useState(() => currentFilters);
+  const [locationInput, setLocationInput] = useState(localFilters.location);
+
+  const handleLocationChange = (value: string) => {
+    setLocationInput(value);
+    setLocalFilters(prev => ({ ...prev, location: value }));
+  };
+
+  const updateLocation = useCallback(
+    (value: string) => {
+      onFilterChange(prev => ({ ...prev, location: value }));
+    },
+    [onFilterChange]
+  );
+
   const FORM_MAP: Record<FormType, string> = {
     panelTruck: 'Van',
     alcove: 'Alcove',
@@ -23,33 +39,31 @@ export default function FilterContent({
   };
 
   const handleFormClick = (form: FormType) => {
-    onFilterChange(prev => ({ ...prev, form: form }));
+    setLocalFilters(prev => ({ ...prev, form }));
   };
 
   const handleEngineClick = (engine: EngineType) => {
-    onFilterChange(prev => ({ ...prev, engine: engine }));
-  };
-
-  const setDebouncedFilter = useDebouncedCallback((location: string) => {
-    onFilterChange(prev => ({ ...prev, location }));
-  }, 300);
-
-  const handleLocationChange = (location: string) => {
-    setDebouncedFilter(location);
+    setLocalFilters(prev => ({ ...prev, engine }));
   };
 
   const handleEquipmentChange = (equipment: EquipmentOption) => {
-    onFilterChange(prev => {
-      const newEquipment = prev.equipment.includes(equipment)
+    setLocalFilters(prev => {
+      const updated = prev.equipment.includes(equipment)
         ? prev.equipment.filter(e => e !== equipment)
         : [...prev.equipment, equipment];
-      return { ...prev, equipment: newEquipment };
+
+      return { ...prev, equipment: updated };
     });
   };
 
-  const handleFilterClick = () => {
-    onFilterChange(prev => ({ ...prev }));
+  const handleApplyFilters = () => {
+    onFilterChange(localFilters);
   };
+
+  useEffect(() => {
+    setLocalFilters(currentFilters);
+    setLocationInput(currentFilters.location);
+  }, [currentFilters]);
 
   return (
     <div className={css.filterContentContainer}>
@@ -61,7 +75,7 @@ export default function FilterContent({
             type="text"
             placeholder="City"
             className={css.locationInput}
-            value={currentFilters.location}
+            value={locationInput}
             onChange={e => handleLocationChange(e.target.value)}
           />
           <svg className={css.iconMap} width="20" height="20">
@@ -84,7 +98,7 @@ export default function FilterContent({
                 id={`equipment-${equipment.option}`}
                 className={css.customCheckbox}
                 value={equipment.option}
-                checked={currentFilters.equipment.includes(equipment.option)}
+                checked={localFilters.equipment.includes(equipment.option)}
                 onChange={() => handleEquipmentChange(equipment.option)}
               />
               <label
@@ -115,7 +129,7 @@ export default function FilterContent({
                 id={`form-${form}`}
                 name="form-filter-group"
                 value={form}
-                checked={currentFilters.form === form}
+                checked={localFilters.form === form}
                 onChange={() => handleFormClick(form)}
                 className={css.customRadio}
               />
@@ -129,9 +143,14 @@ export default function FilterContent({
           ))}
         </ul>
       </div>
-      <button onClick={handleFilterClick} className={css.applyBtn}>
-        Apply Filters
-      </button>
+      <div className={css.buttonContainer}>
+        <button onClick={handleApplyFilters} className={css.applyBtn}>
+          Search
+        </button>
+        <button onClick={onClearAll} className={css.applyBtn}>
+          New search
+        </button>
+      </div>
     </div>
   );
 }

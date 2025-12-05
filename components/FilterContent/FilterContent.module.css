@@ -134,7 +134,14 @@
   width: 24px;
   height: 24px;
   margin-bottom: 8px;
+  stroke: var(--badges);
   fill: var(--main);
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
 }
 
 .applyBtn {

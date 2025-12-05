@@ -2,8 +2,15 @@
   padding: 48px 0 48px 0;
 }
 
+.main {
+  display: flex;
+  flex-direction: row;
+  gap: 64px;
+}
+
 .tablet {
-  display: none;
+  display: block;
+  width: 360px;
 }
 
 .buttonContainer {
@@ -13,16 +20,6 @@
 }
 
 .button {
-  /* border: 1px solid var(--color-deco);
-  border-radius: 100px;
-  width: 158px;
-  height: 36px;
-  background: var(--color-deco);
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  color: #000; */
   border: 1px solid var(--gray-light);
   border-radius: 200px;
   width: 145px;
@@ -47,7 +44,7 @@
   border: 1px solid var(--button-hover);
 }
 
-/* .messageContainer {
+.messageContainer {
   border-radius: 16px;
   padding: 24px 16px;
   width: 335px;
@@ -61,41 +58,10 @@
   line-height: 150%;
   text-align: center;
   margin-bottom: 16px;
-} */
+}
 
-/* .reset {
-  border: 1px solid var(--color-deco);
-  border-radius: 100px;
-  padding: 6px 12px;
-  width: 303px;
-  height: 36px;
-  background: var(--color-deco);
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  color: #000;
-} */
-
-/* .test {
+.test {
   display: flex;
   justify-content: center;
   width: 100%;
-} */
-
-@media screen and (min-width: 768px) {
-  .main {
-    display: flex;
-    flex-direction: row;
-    gap: 64px;
-  }
-
-  .tablet {
-    display: block;
-    width: 360px;
-  }
-
-  /* .test {
-    display: flex;
-  } */
 }

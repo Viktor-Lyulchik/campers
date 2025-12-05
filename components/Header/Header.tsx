@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import styles from './Header.module.css';
+import css from './Header.module.css';
 
 export default function Header() {
   return (
-    <header className={styles.header}>
+    <header className={css.header}>
       <div className="container">
-        <div className={styles.wrapper}>
-          <div className={styles.left}>
+        <div className={css.wrapper}>
+          <div className={css.left}>
             <Link href="/">
               <svg width={136} height={16}>
                 <use href="/icons.svg#icon-logo"></use>
@@ -14,20 +14,20 @@ export default function Header() {
             </Link>
           </div>
 
-          <ul className={styles.navList}>
+          <ul className={css.navList}>
             <li>
-              <Link href="/" className={styles.navLink}>
+              <Link href="/" className={css.navLink}>
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/catalog" className={styles.navLink}>
+              <Link href="/catalog" className={css.navLink}>
                 Catalog
               </Link>
             </li>
           </ul>
 
-          <div className={styles.right}></div>
+          <div className={css.right}></div>
         </div>
       </div>
     </header>
