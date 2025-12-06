@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'TravelTracks',
+  title: 'Campers from TravelTracks',
   description:
-    'Campers of your dreams. You can find everything you want in our catalog.',
+    'Camper rental in Ukraine 🚐. Modern motorhomes for your perfect road trip. Comfort, freedom, and great prices. Book your camper online!',
   icons: {
     icon: [
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
@@ -21,26 +21,28 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
+    locale: 'en_US',
     url: 'https://campers.vercel.app',
-    title: 'TravelTracks',
+    title: 'Campers from TravelTracks',
+    siteName: 'Campers',
     description:
-      'Campers of your dreams. You can find everything you want in our catalog.',
+      'Camper rental in Ukraine 🚐. Modern motorhomes for your perfect road trip. Comfort, freedom, and great prices. Book your camper online!',
     images: [
       {
-        url: 'https://campers.vercel.app/img/main.png',
+        url: 'https://campers.vercel.app/camper.png',
         width: 1200,
         height: 630,
-        alt: 'Campers',
+        alt: 'Campers from TravelTracks rental',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@yourTwitterHandle',
-    title: 'TravelTracks',
+    title: 'Campers from TravelTracks',
     description:
-      'Campers of your dreams. You can find everything you want in our catalog.',
-    images: ['https://campers.vercel.app/img/main.png'],
+      'Camper rental in Ukraine 🚐. Modern motorhomes for your perfect road trip. Comfort, freedom, and great prices. Book your camper online!',
+    images: ['https://campers.vercel.app/camper.png'],
   },
 };
 

@@ -10,6 +10,7 @@ import { AllFiltersState, EquipmentOption } from '@/types/filters';
 import { EngineType, TransmissionType, FormType } from '@/types/camper';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import Loading from '../loading';
+import { toast, ToastContainer } from 'react-toastify';
 
 const getFiltersFromParams = (
   searchParams: URLSearchParams
@@ -137,6 +138,12 @@ export default function CampersClient() {
     });
   };
 
+  if (isError && !hasNextPage) {
+    toast.error(
+      'Do not found any campervan by current filters, clear filters and try again!'
+    );
+  }
+
   return (
     <div className="container">
       <main className={css.main}>
@@ -162,6 +169,7 @@ export default function CampersClient() {
             )}
           </div>
         </div>{' '}
+        <ToastContainer position="top-right" autoClose={2000} />
       </main>{' '}
     </div>
   );

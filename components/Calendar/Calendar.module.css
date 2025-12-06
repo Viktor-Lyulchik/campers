@@ -1,0 +1,142 @@
+.container {
+  position: relative;
+  width: 276px;
+  background-color: var(--white);
+  border-radius: 8px;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  padding: 12px;
+}
+
+.customHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--inputs);
+}
+
+.monthLabel {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  color: var(--main);
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  color: var(--gray);
+}
+
+.navButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.content :global(.rdp) {
+  --rdp-accent-color: var(--gray);
+  --rdp-background-color: var(--gray);
+  margin: 0;
+}
+
+.content :global(.rdp-month_caption) {
+  display: none;
+}
+
+.content :global(.rdp-month_grid) {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.content :global(.rdp-weekdays) {
+  border-bottom: 1px solid var(--inputs);
+}
+
+.content :global(.rdp-weekday) {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--gray);
+  padding: 8px 4px 12px 4px;
+  text-transform: uppercase;
+  width: 40px;
+}
+
+.content :global(.rdp-weeks) {
+  margin-top: 4px;
+}
+
+.content :global(.rdp-day) {
+  width: 40px;
+  height: 40px;
+  padding: 2px;
+}
+
+.content :global(.rdp-day_button) {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-weight: 400;
+  font-size: 16px;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  color: var(--main);
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content :global(.rdp-day_button:hover:not(:disabled)) {
+  background-color: var(--inputs);
+}
+
+.content :global(.rdp-today .rdp-day_button) {
+  background-color: var(--gray);
+  color: var(--white);
+  font-weight: 500;
+}
+
+.content :global(.rdp-selected .rdp-day_button) {
+  background-color: var(--gray);
+  color: var(--white);
+  font-weight: 500;
+  border-color: var(--gray);
+}
+
+.content :global(.rdp-selected .rdp-day_button:hover) {
+  background-color: var(--gray);
+  border-color: var(--gray);
+}
+
+.content :global(.rdp-outside .rdp-day_button) {
+  color: var(--gray-light);
+  opacity: 1;
+}
+
+.content :global(.rdp-disabled .rdp-day_button) {
+  opacity: 0.6;
+  cursor: not-allowed;
+  color: var(--gray);
+}
+
+.content :global(.rdp-disabled .rdp-day_button:hover) {
+  background-color: transparent;
+}

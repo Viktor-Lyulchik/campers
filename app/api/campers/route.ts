@@ -24,31 +24,6 @@ export async function GET(request: NextRequest) {
     const sortBy = request.nextUrl.searchParams.get('sortBy') ?? '';
     const sortOrder = request.nextUrl.searchParams.get('sortOrder') ?? '';
 
-    // console.log('AC=', AC);
-    // console.log('transmission=', transmission);
-    // console.log('gas=', gas);
-    // console.log('form=', form);
-
-    // console.log({
-    //   page,
-    //   limit: perPage,
-    //   ...(form && { form }),
-    //   ...(transmission && { transmission }),
-    //   ...(engine && { engine }),
-    //   ...(AC && { AC }),
-    //   ...(bathroom && { bathroom }),
-    //   ...(kitchen && { kitchen }),
-    //   ...(TV && { TV }),
-    //   ...(radio && { radio }),
-    //   ...(refrigerator && { refrigerator }),
-    //   ...(microwave && { microwave }),
-    //   ...(gas && { gas }),
-    //   ...(water && { water }),
-    //   ...(location && { location }),
-    //   ...(sortBy && { sortBy }),
-    //   ...(sortOrder && { sortOrder }),
-    // });
-
     const res = await api('/campers', {
       params: {
         page,

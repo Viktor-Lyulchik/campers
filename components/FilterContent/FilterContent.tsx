@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
 import css from './FilterContent.module.css';
 import {
@@ -24,13 +24,6 @@ export default function FilterContent({
     setLocationInput(value);
     setLocalFilters(prev => ({ ...prev, location: value }));
   };
-
-  const updateLocation = useCallback(
-    (value: string) => {
-      onFilterChange(prev => ({ ...prev, location: value }));
-    },
-    [onFilterChange]
-  );
 
   const FORM_MAP: Record<FormType, string> = {
     panelTruck: 'Van',
@@ -138,6 +131,33 @@ export default function FilterContent({
                   <use href={`/icons.svg#icon-${form}`} />
                 </svg>
                 {FORM_MAP[form]}
+              </label>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <div className={css.filterHeader}>
+          <h3>Engine type</h3>
+          <hr className={css.divider} />
+        </div>
+        <ul className={css.formList}>
+          {ENGINE.map(engine => (
+            <li key={engine} className={css.formItem}>
+              <input
+                type="radio"
+                id={`engine-${engine}`}
+                name="engine-filter-group"
+                value={engine}
+                checked={localFilters.engine === engine}
+                onChange={() => handleEngineClick(engine)}
+                className={css.customRadio}
+              />
+              <label htmlFor={`engine-${engine}`} className={css.card}>
+                <svg className={css.icon}>
+                  <use href={`/icons.svg#icon-${engine}`} />
+                </svg>
+                {engine}
               </label>
             </li>
           ))}

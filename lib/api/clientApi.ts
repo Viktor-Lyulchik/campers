@@ -71,8 +71,6 @@ export async function fetchCampers(
     if (sortBy) params.sortBy = sortBy;
     if (sortOrder) params.sortOrder = sortOrder;
 
-    // console.log('clientsApi = ', params);
-
     const { data } = await nextServer.get<FetchCampersResponse>('/campers', {
       params,
       paramsSerializer: {

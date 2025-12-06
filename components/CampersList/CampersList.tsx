@@ -17,9 +17,9 @@ export default function CampersList({ campers }: CampersListProps) {
         {campers.map(camper => (
           <li key={camper.id} className={css.listItem}>
             <div className={css.card}>
-              <Link href={`/campers/${camper.id}`} className={css.detailLink}>
+              <Link href={`/catalog/${camper.id}`} className={css.detailLink}>
                 <Image
-                  src={camper.gallery[0].original}
+                  src={camper.gallery[0].thumb}
                   alt={camper.name}
                   width={292}
                   height={320}
@@ -30,7 +30,7 @@ export default function CampersList({ campers }: CampersListProps) {
                 <div className={css.info}>
                   <p className={css.name}>{camper.name}</p>
                   <div className={css.priceFavourite}>
-                    <p className={css.price}>€{camper.price}</p>
+                    <p className={css.price}>€{camper.price.toFixed(2)}</p>
                     <FavouriteButton id={camper.id} />
                   </div>
                 </div>
@@ -63,7 +63,7 @@ export default function CampersList({ campers }: CampersListProps) {
                   {camper.engine && (
                     <li className={css.feature}>
                       <svg className={css.featureIcon}>
-                        <use href={`/icons.svg#icon-petrol`}></use>
+                        <use href={`/icons.svg#icon-${camper.engine}`}></use>
                       </svg>
                       {camper.engine}
                     </li>
@@ -80,7 +80,7 @@ export default function CampersList({ campers }: CampersListProps) {
                       )
                   )}
                 </ul>
-                <Link href={`/campers/${camper.id}`} className={css.detailLink}>
+                <Link href={`/catalog/${camper.id}`} className={css.detailLink}>
                   <button className={css.detail}>{'Show more'}</button>
                 </Link>
               </div>

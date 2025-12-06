@@ -1,6 +1,6 @@
-export type EngineType = 'petrol' | 'diesel' | 'hybrid'; //['diesel', 'petrol', 'hybrid']
-export type TransmissionType = 'manual' | 'automatic'; //['automatic', 'manual']
-export type FormType = 'panelTruck' | 'alcove' | 'fullyIntegrated'; //['alcove', 'fullyIntegrated', 'panelTruck']
+export type EngineType = 'petrol' | 'diesel' | 'hybrid';
+export type TransmissionType = 'manual' | 'automatic';
+export type FormType = 'panelTruck' | 'alcove' | 'fullyIntegrated';
 
 export interface Camper {
   id: string;
