@@ -42,7 +42,11 @@ export default function Features({ camper }: FeaturesProp) {
           equipment =>
             camper[equipment.option as keyof Camper] && (
               <li key={equipment.option} className={css.feature}>
-                <svg className={css.featureIcon}>
+                <svg
+                  className={`${css.featureIcon} ${
+                    equipment.option === 'refrigerator' ? css.iconRef : ''
+                  }`}
+                >
                   <use href={`/icons.svg#${equipment.icon}`}></use>
                 </svg>
                 {equipment.option}

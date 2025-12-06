@@ -56,6 +56,11 @@
   fill: var(--main);
 }
 
+.iconRef {
+  transform: scale(2);
+  transform-origin: center;
+}
+
 .title {
   font-weight: 600;
   font-size: 20px;

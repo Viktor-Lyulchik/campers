@@ -141,3 +141,8 @@
   stroke: var(--badges);
   fill: var(--main);
 }
+
+.iconRef {
+  transform: scale(1.5);
+  transform-origin: center;
+}
