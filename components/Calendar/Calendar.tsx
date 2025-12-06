@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { addMonths, subMonths, format } from 'date-fns';
+import { uk } from 'date-fns/locale';
 import 'react-day-picker/dist/style.css';
 import css from './Calendar.module.css';
 
@@ -42,10 +43,12 @@ export default function Calendar({ value, onChange }: CalendarProp) {
           month={month}
           onMonthChange={setMonth}
           hideNavigation
+          locale={uk}
+          weekStartsOn={1}
           formatters={{
             formatWeekdayName: date => {
-              const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-              return days[date.getDay()];
+              const days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+              return days[(date.getDay() + 6) % 7];
             },
           }}
         />
