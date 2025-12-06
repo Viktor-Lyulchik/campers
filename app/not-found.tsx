@@ -13,7 +13,7 @@ export const metadata: Metadata = {
         url: 'https://campers-sand.vercel.app/camper.png',
         width: 1200,
         height: 630,
-        alt: 'Campers from TravelTracks rental',
+        alt: 'Campers from TravelTrucks rental',
       },
     ],
   },

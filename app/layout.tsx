@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Campers from TravelTracks',
+  title: 'Campers from TravelTrucks',
   description:
     'Camper rental in Ukraine 🚐. Modern motorhomes for your perfect road trip. Comfort, freedom, and great prices. Book your camper online!',
   icons: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://campers-sand.vercel.app',
-    title: 'Campers from TravelTracks',
+    title: 'Campers from TravelTrucks',
     siteName: 'Campers',
     description:
       'Camper rental in Ukraine 🚐. Modern motorhomes for your perfect road trip. Comfort, freedom, and great prices. Book your camper online!',
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
         url: 'https://campers-sand.vercel.app/camper.png',
         width: 1200,
         height: 630,
-        alt: 'Campers from TravelTracks rental',
+        alt: 'Campers from TravelTrucks rental',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@yourTwitterHandle',
-    title: 'Campers from TravelTracks',
+    title: 'Campers from TravelTrucks',
     description:
       'Camper rental in Ukraine 🚐. Modern motorhomes for your perfect road trip. Comfort, freedom, and great prices. Book your camper online!',
     images: ['https://campers-sand.vercel.app/camper.png'],

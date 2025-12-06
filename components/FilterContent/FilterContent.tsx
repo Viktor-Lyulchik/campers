@@ -168,7 +168,7 @@ export default function FilterContent({
           Search
         </button>
         <button onClick={onClearAll} className={css.applyBtn}>
-          New search
+          Reset search
         </button>
       </div>
     </div>
