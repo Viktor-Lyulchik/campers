@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: '404 | Page Not Found',
     description: 'This page was not found',
-    url: 'https://campers.vercel.app',
+    url: 'https://campers-sand.vercel.app',
     images: [
       {
-        url: 'https://campers.vercel.app/camper.png',
+        url: 'https://campers-sand.vercel.app/camper.png',
         width: 1200,
         height: 630,
         alt: 'Campers from TravelTracks rental',

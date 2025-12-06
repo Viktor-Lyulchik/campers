@@ -22,14 +22,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://campers.vercel.app',
+    url: 'https://campers-sand.vercel.app',
     title: 'Campers from TravelTracks',
     siteName: 'Campers',
     description:
       'Camper rental in Ukraine 🚐. Modern motorhomes for your perfect road trip. Comfort, freedom, and great prices. Book your camper online!',
     images: [
       {
-        url: 'https://campers.vercel.app/camper.png',
+        url: 'https://campers-sand.vercel.app/camper.png',
         width: 1200,
         height: 630,
         alt: 'Campers from TravelTracks rental',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: 'Campers from TravelTracks',
     description:
       'Camper rental in Ukraine 🚐. Modern motorhomes for your perfect road trip. Comfort, freedom, and great prices. Book your camper online!',
-    images: ['https://campers.vercel.app/camper.png'],
+    images: ['https://campers-sand.vercel.app/camper.png'],
   },
 };
 

@@ -11,7 +11,7 @@ Built with **Next.js**, **TypeScript**, **Zustand**, and **Axios**.
 
 ## Live Demo
 
-- [Live site on Vercel](https://campers.vercel.app/)
+- [Live site on Vercel](https://campers-sand.vercel.app)
 
 ## Pages
 
