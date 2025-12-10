@@ -143,22 +143,3 @@
   gap: 16px;
   justify-content: center;
 }
-
-.applyBtn {
-  width: 166px;
-  height: 56px;
-  border-radius: 200px;
-  border: none;
-  background-color: var(--button);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: -0.01em;
-  color: var(--white);
-  transition: background-color 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-.applyBtn:hover {
-  background-color: var(--button-hover);
-}

@@ -28,26 +28,3 @@
   color: var(--inputs);
   margin-bottom: 40px;
 }
-
-.link_primary {
-  display: inline-block;
-
-  border: none;
-  border-radius: 200px;
-  padding-block: 16px;
-  padding-inline: 48px;
-  background-color: var(--button);
-
-  font-weight: 500;
-  font-size: 16px;
-
-  line-height: 1.5;
-  letter-spacing: -0.01em;
-  color: var(--white);
-
-  transition: background-color 0.3s ease-in-out;
-}
-
-.link_primary:hover {
-  background-color: var(--button-hover);
-}

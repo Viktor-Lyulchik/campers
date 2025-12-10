@@ -21,7 +21,7 @@ export default function FavouriteButton({ id }: FavouriteButtonProps) {
       <LuHeart
         className={css.iconHeart}
         size={24}
-        stroke={isFavourite ? '#101828' : '#e44848'}
+        stroke={isFavourite ? '#e44848' : '#101828'}
         fill="transparent"
         strokeWidth={2}
       />

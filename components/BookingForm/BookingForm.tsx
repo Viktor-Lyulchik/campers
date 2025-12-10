@@ -4,6 +4,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import InputDate from '../InputDate/InputDate';
 import css from './BookingForm.module.css';
+import CampButton from '../CampButton/CampButton';
 
 export default function BookingForm() {
   const initialValues = {
@@ -18,7 +19,7 @@ export default function BookingForm() {
     email: Yup.string()
       .email('Enter a valid email')
       .required('Email is required'),
-    bookingDate: Yup.date().required('Booking date is required').nullable(),
+    bookingDate: Yup.date().required('Booking date is required'),
     comment: Yup.string(),
   });
 
@@ -42,7 +43,7 @@ export default function BookingForm() {
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
-        {({ setFieldValue, values }) => (
+        {({ setFieldValue, setFieldTouched, values, touched, errors }) => (
           <Form className={css.form}>
             <Field name="name" placeholder="Name*" className={css.input} />
             <ErrorMessage name="name" component="div" className={css.error} />
@@ -56,14 +57,22 @@ export default function BookingForm() {
             <ErrorMessage name="email" component="div" className={css.error} />
 
             <InputDate
-              value={values.bookingDate}
-              onChange={date => setFieldValue('bookingDate', date)}
-            />
-            <ErrorMessage
               name="bookingDate"
-              component="div"
-              className={css.error}
+              value={values.bookingDate}
+              onChange={date => {
+                setFieldValue('bookingDate', date);
+              }}
+              onBlur={() => {
+                setTimeout(() => {
+                  setFieldTouched('bookingDate', true, true);
+                }, 0);
+              }}
+              touched={touched.bookingDate}
+              error={errors.bookingDate}
             />
+            {touched.bookingDate && errors.bookingDate && (
+              <div className={css.error}>{errors.bookingDate}</div>
+            )}
 
             <Field
               name="comment"
@@ -72,9 +81,7 @@ export default function BookingForm() {
               className={css.textarea}
             />
 
-            <button type="submit" className={css.button}>
-              Send
-            </button>
+            <CampButton type="submit" textBtn="Send"></CampButton>
           </Form>
         )}
       </Formik>

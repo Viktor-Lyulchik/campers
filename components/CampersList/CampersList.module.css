@@ -88,30 +88,6 @@
   margin-bottom: 24px;
 }
 
-.detail {
-  display: inline-block;
-
-  border: none;
-  border-radius: 200px;
-  padding-block: 16px;
-  padding-inline: 48px;
-  background-color: var(--button);
-
-  font-weight: 500;
-  font-size: 16px;
-
-  line-height: 1.5;
-  letter-spacing: -0.01em;
-  color: var(--white);
-  outline: none;
-
-  transition: background-color 0.3s ease-in-out;
-}
-
-.detail:hover {
-  background-color: var(--button-hover);
-}
-
 .wrapper {
   display: flex;
   flex-wrap: wrap;

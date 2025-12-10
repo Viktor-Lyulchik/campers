@@ -1,5 +1,5 @@
-import { Link } from 'lucide-react';
 import css from './Hero.module.css';
+import CampButton from '../CampButton/CampButton';
 
 const Hero = () => {
   return (
@@ -10,10 +10,7 @@ const Hero = () => {
           <p className={css.hero_text}>
             You can find everything you want in our catalog.
           </p>
-
-          <a href="/catalog" className={css.link_primary}>
-            View Now
-          </a>
+          <CampButton href="/catalog" textBtn="View Now" />
         </div>
       </div>
     </section>

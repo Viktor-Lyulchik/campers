@@ -23,7 +23,7 @@ export default function Features({ camper }: FeaturesProp) {
       <ul className={css.featuresRow}>
         {camper.transmission && camper.transmission === 'automatic' && (
           <li className={css.feature}>
-            <svg className={css.featureIcon}>
+            <svg className={css.featureIcon} vectorEffect="non-scaling-stroke">
               <use href={`/icons.svg#icon-${camper.transmission}`}></use>
             </svg>
             {camper.transmission}
@@ -31,7 +31,7 @@ export default function Features({ camper }: FeaturesProp) {
         )}
         {camper.engine && (
           <li className={css.feature}>
-            <svg className={css.featureIcon}>
+            <svg className={css.featureIcon} vectorEffect="non-scaling-stroke">
               <use href={`/icons.svg#icon-${camper.engine}`}></use>
             </svg>
             {camper.engine}
@@ -46,6 +46,7 @@ export default function Features({ camper }: FeaturesProp) {
                   className={`${css.featureIcon} ${
                     equipment.option === 'refrigerator' ? css.iconRef : ''
                   }`}
+                  vectorEffect="non-scaling-stroke"
                 >
                   <use href={`/icons.svg#${equipment.icon}`}></use>
                 </svg>

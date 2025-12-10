@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import FavouriteButton from '../FavouriteButton/FavouriteButton';
 import { EQUIPMENT } from '@/types/filters';
+import CampButton from '../CampButton/CampButton';
 
 interface CampersListProps {
   campers: Camper[];
@@ -52,7 +53,10 @@ export default function CampersList({ campers }: CampersListProps) {
                   {camper.transmission &&
                     camper.transmission === 'automatic' && (
                       <li className={css.feature}>
-                        <svg className={css.featureIcon}>
+                        <svg
+                          className={css.featureIcon}
+                          vectorEffect="non-scaling-stroke"
+                        >
                           <use
                             href={`/icons.svg#icon-${camper.transmission}`}
                           ></use>
@@ -62,7 +66,10 @@ export default function CampersList({ campers }: CampersListProps) {
                     )}
                   {camper.engine && (
                     <li className={css.feature}>
-                      <svg className={css.featureIcon}>
+                      <svg
+                        className={css.featureIcon}
+                        vectorEffect="non-scaling-stroke"
+                      >
                         <use href={`/icons.svg#icon-${camper.engine}`}></use>
                       </svg>
                       {camper.engine}
@@ -78,6 +85,7 @@ export default function CampersList({ campers }: CampersListProps) {
                                 ? css.iconRef
                                 : ''
                             }`}
+                            vectorEffect="non-scaling-stroke"
                           >
                             <use href={`/icons.svg#${equipment.icon}`}></use>
                           </svg>
@@ -87,7 +95,10 @@ export default function CampersList({ campers }: CampersListProps) {
                   )}
                 </ul>
                 <Link href={`/catalog/${camper.id}`} className={css.detailLink}>
-                  <button className={css.detail}>{'Show more'}</button>
+                  <CampButton
+                    handleButtonClick={() => {}}
+                    textBtn="Show more"
+                  />
                 </Link>
               </div>
             </div>

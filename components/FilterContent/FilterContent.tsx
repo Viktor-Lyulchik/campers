@@ -11,6 +11,7 @@ import {
   EquipmentOption,
 } from '@/types/filters';
 import { EngineType, FormType } from '@/types/camper';
+import CampButton from '../CampButton/CampButton';
 
 export default function FilterContent({
   currentFilters,
@@ -71,7 +72,12 @@ export default function FilterContent({
             value={locationInput}
             onChange={e => handleLocationChange(e.target.value)}
           />
-          <svg className={css.iconMap} width="20" height="20">
+          <svg
+            className={css.iconMap}
+            width="20"
+            height="20"
+            vectorEffect="non-scaling-stroke"
+          >
             <use href="/icons.svg#icon-map" />
           </svg>
         </div>
@@ -98,7 +104,7 @@ export default function FilterContent({
                 className={css.card}
                 htmlFor={`equipment-${equipment.option}`}
               >
-                <svg className={css.icon}>
+                <svg className={css.icon} vectorEffect="non-scaling-stroke">
                   <use href={`/icons.svg#${equipment.icon}`} />
                 </svg>
 
@@ -127,7 +133,7 @@ export default function FilterContent({
                 className={css.customRadio}
               />
               <label htmlFor={`form-${form}`} className={css.card}>
-                <svg className={css.icon}>
+                <svg className={css.icon} vectorEffect="non-scaling-stroke">
                   <use href={`/icons.svg#icon-${form}`} />
                 </svg>
                 {FORM_MAP[form]}
@@ -154,7 +160,7 @@ export default function FilterContent({
                 className={css.customRadio}
               />
               <label htmlFor={`engine-${engine}`} className={css.card}>
-                <svg className={css.icon}>
+                <svg className={css.icon} vectorEffect="non-scaling-stroke">
                   <use href={`/icons.svg#icon-${engine}`} />
                 </svg>
                 {engine}
@@ -164,12 +170,8 @@ export default function FilterContent({
         </ul>
       </div>
       <div className={css.buttonContainer}>
-        <button onClick={handleApplyFilters} className={css.applyBtn}>
-          Search
-        </button>
-        <button onClick={onClearAll} className={css.applyBtn}>
-          Reset search
-        </button>
+        <CampButton handleButtonClick={handleApplyFilters} textBtn="Search" />
+        <CampButton handleButtonClick={onClearAll} textBtn="Reset search" />
       </div>
     </div>
   );

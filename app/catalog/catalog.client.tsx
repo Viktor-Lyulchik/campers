@@ -11,6 +11,7 @@ import { EngineType, TransmissionType, FormType } from '@/types/camper';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import Loading from '../loading';
 import { toast, ToastContainer } from 'react-toastify';
+import CampButton from '@/components/CampButton/CampButton';
 
 const getFiltersFromParams = (
   searchParams: URLSearchParams
@@ -159,13 +160,12 @@ export default function CampersClient() {
           <CampersList campers={campers}></CampersList>{' '}
           <div className={css.buttonContainer}>
             {hasNextPage && (
-              <button
-                onClick={handleLoadMore}
+              <CampButton
+                handleButtonClick={handleLoadMore}
                 disabled={!hasNextPage || isFetchingNextPage}
-                className={css.button}
-              >
-                {isFetchingNextPage ? 'loading' : 'Load more'}
-              </button>
+                textBtn={isFetchingNextPage ? 'loading' : 'Load more'}
+                styleBtn="secondary"
+              />
             )}
           </div>
         </div>{' '}

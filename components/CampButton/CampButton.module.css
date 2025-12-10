@@ -1,0 +1,53 @@
+.campButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  text-decoration: none;
+
+  width: 166px;
+  height: 56px;
+  border-radius: 200px;
+  border: none;
+
+  background-color: var(--button);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  transition: background-color 0.3s ease-in-out;
+
+  cursor: pointer;
+}
+
+.campButton:hover {
+  background-color: var(--button-hover);
+}
+
+.campButtonSecondary {
+  border: 1px solid var(--gray-light);
+  border-radius: 200px;
+  width: 145px;
+  height: 56px;
+
+  background-color: var(--white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--main);
+
+  margin: 0 auto;
+}
+
+.campButtonSecondary:hover {
+  border: 1px solid var(--button-hover);
+}

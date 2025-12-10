@@ -4,7 +4,7 @@
   padding: 24px;
   width: 100%;
   max-width: 641px;
-  height: 588px;
+  min-height: 588px;
 }
 
 @media (min-width: 1024px) {
@@ -60,23 +60,8 @@
   background-color: var(--badges);
 }
 
-.button {
-  width: 166px;
-  height: 56px;
-  margin: 0 auto;
-  padding: 16px 60px;
-  border-radius: 200px;
-  border: none;
-  background-color: var(--button);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: -0.01em;
-  color: var(--white);
-  cursor: pointer;
-}
-
 .error {
   color: var(--button-hover);
   font-size: 14px;
+  margin-top: -10px;
 }

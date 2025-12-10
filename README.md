@@ -9,6 +9,15 @@ requests.
 
 Built with **Next.js**, **TypeScript**, **Zustand**, and **Axios**.
 
+## Author
+
+**Viktor Liulchyk**
+
+- GitHub: [@Viktor-Lyulchik](https://github.com/Viktor-Lyulchik)
+- LinkedIn:
+  [linkedin.com/in/viktorliulchyk](https://www.linkedin.com/in/viktorliulchyk/)
+- Email: viktor.lyulchik@gmail.com
+
 ## Live Demo
 
 - [Live site on Vercel](https://campers-sand.vercel.app)
@@ -73,6 +82,4 @@ git clone YOUR_REPO_URL
 cd your-project
 npm install
 npm run dev
-
-
 ```

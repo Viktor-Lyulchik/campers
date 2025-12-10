@@ -47,3 +47,7 @@
 .navLink:hover {
   color: var(--button-hover);
 }
+
+.navLink.active {
+  color: var(--button-hover);
+}

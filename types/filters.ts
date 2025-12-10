@@ -61,7 +61,7 @@ export interface AllFiltersState {
 export interface FilterContentProps {
   currentFilters: AllFiltersState;
   onFilterChange: React.Dispatch<React.SetStateAction<AllFiltersState>>;
-  onClearAll?: () => void;
+  onClearAll: () => void;
 }
 
 export interface FilterContainerProps extends FilterContentProps {
